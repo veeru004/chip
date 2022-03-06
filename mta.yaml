@@ -46,9 +46,23 @@ modules:
       - ChipUI.zip
       name: ChipUI
       target-path: resources/
+    - artifacts:
+      - Init.zip
+      name: Init
+      target-path: resources/
 - name: ChipUI
   type: html5
   path: Chip-UI
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: Init
+  type: html5
+  path: Init
   build-parameters:
     build-result: dist
     builder: custom
@@ -63,7 +77,7 @@ resources:
     config:
       HTML5Runtime_enabled: true
       init_data:
-        subaccount:
+        instance:
           destinations:
           - Authentication: NoAuthentication
             Name: ui5
