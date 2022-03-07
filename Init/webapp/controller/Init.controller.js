@@ -24,7 +24,7 @@ sap.ui.define(
 
         startWorkflowInstance: function () {
           var model = this.getView().getModel();
-          var definitionId = "myworkflow";
+          var definitionId = "prodrecallwf";
           var initialContext = model.getProperty("/initialContext");
 
           var data = {
