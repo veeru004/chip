@@ -22,6 +22,8 @@ stages:
     cloudFoundryDeploy: false
     tmsUpload: false
 steps:
+  mtaBuild:
+    platform: 'CF'
   artifactPrepareVersion:
     versioningType: "cloud_noTag"
   cloudFoundryDeploy:
