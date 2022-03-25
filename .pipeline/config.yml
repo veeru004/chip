@@ -1,13 +1,26 @@
-
-    
+---
+general:
+  buildTool: "mta"
+stages:
+  Build:
+    npmExecuteLint: false
+  Additional Unit Tests:
+    npmExecuteScripts: false
+    karmaExecuteTests: false
+  Malware Scan:
+    malwareExecuteScan: false
+  Acceptance:
+    cloudFoundryDeploy: true
+    cfApiEndpoint: "https://api.cf.us10.hana.ondemand.com"
+    cfOrg: "cf02965btrial"
+    cfSpace: "trialspace"
+    cfCredentialsId: "cf"
+    uiVeri5ExecuteTests: false
+  Release:
+    cloudFoundryDeploy: false
+    tmsUpload: false
 steps:
-  mtaBuild:
-    platform: 'CF'
+  artifactPrepareVersion:
+    versioningType: "cloud_noTag"
   cloudFoundryDeploy:
-      deployType: 'standard'
-      deployTool: 'mtaDeployPlugin'
-      apiEndpoint: 'https://api.cf.us10.hana.ondemand.com' # default: 'https://api.cf.eu10.hana.ondemand.com'
-      org: 'cf02965btrial'
-      space: 'trialspace'
-      credentialsId: 'cf'
-
+    mtaDeployParameters: "-f --version-rule ALL"
