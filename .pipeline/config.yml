@@ -1,6 +1,8 @@
 ---
 general:
   buildTool: "mta"
+service:
+  buildToolVersion: "MBTJ8N12"
 stages:
   Build:
     npmExecuteLint: false
@@ -11,7 +13,7 @@ stages:
     malwareExecuteScan: false
   Acceptance:
     cloudFoundryDeploy: true
-    cfApiEndpoint: "https://api.cf.us10.hana.ondemand.com"
+    cfApiEndpoint: "https://api.cf.eu10.hana.ondemand.com"
     cfOrg: "cf02965btrial"
     cfSpace: "trialspace"
     cfCredentialsId: "cf"
