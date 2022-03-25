@@ -13,7 +13,7 @@ stages:
     malwareExecuteScan: false
   Acceptance:
     cloudFoundryDeploy: true
-    cfApiEndpoint: "https://api.cf.eu10.hana.ondemand.com"
+    cfApiEndpoint: "https://api.cf.us10.hana.ondemand.com/"
     cfOrg: "cf02965btrial"
     cfSpace: "trialspace"
     cfCredentialsId: "cf"
