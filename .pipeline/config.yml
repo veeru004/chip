@@ -4,7 +4,7 @@ general:
 steps:
   mtaBuild:
     platform: 'CF'
-  cloudFoundryDeploy: true
+  cloudFoundryDeploy:
     deployTool: 'mtaDeployPlugin'
     deployType: 'standard'
     cfApiEndpoint: "https://api.cf.us10.hana.ondemand.com/"
